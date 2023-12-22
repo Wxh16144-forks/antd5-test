@@ -2,11 +2,21 @@ import Guide from '@/components/Guide';
 import { trim } from '@/utils/format';
 import { PageContainer } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
-import { Button, Modal, Radio, Select } from 'antd';
+import { Button, Modal, Radio, Select, message } from 'antd';
 import styles from './index.less';
+import React from 'react';
 
 const HomePage: React.FC = () => {
   const { name } = useModel('global');
+
+  React.useEffect(() => {
+    message.success({
+      content: '欢迎使用',
+      duration: 10
+    });
+
+  }, []);
+
   return (
     <PageContainer ghost>
       <div className={styles.container}>
